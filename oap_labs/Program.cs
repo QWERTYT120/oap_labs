@@ -4,86 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace oap_labs
+namespace oap_labs_1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            // объявление массива
-            var Massiv = new int[10];
 
-            // генератор случайных чисел
-            Random Rand = new Random();
-            var MaxValue = -1
-
-            // заполняем массив случайными числами 0..100
-            for (int i = 0; i < Massiv.Length; i++)
-                Massiv[i] = Rand.Next(100)
-                if (Massiv[i] > MaxValue)
-                MaxValue = Massiv[i];
-            Console.Write($"\nMaximum = {MaxValue}");
-            */
-                */
-
-
-        var Massive = new int[10];
-            Random Rand = new Random();
-            var Summa = 0;
-            var Proizvedenie = 1L;
-            for (int i = 0; i < Massive.Length; i++)
+            while (true)
             {
-                Massive[i] = Rand.Next(100);
-                 Summa += Massive[i];
-                 Proizvedenie = Proizvedenie * Massive[i];
-                 Console.Write($"{Massive[i]}\t");
-            }
-                 Console.Write($"\nsumma = {Summa}\nпроизведение = {Proizvedenie}")
-                Console.ReadLine();
+                Console.Write("Input Nomer: ");
+                string InputNomer = Console.ReadLine();
+                if (InputNomer.Length == 0)
+                    break;
 
-            */
-                */
 
-        Console.Write("Input MinValue: ");
-            var MinValue = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Input MaxValue: ");
-            var MaxValue = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Input Shag: ");
-            var Shag = Convert.ToInt32(Console.ReadLine());
+                char[] GosNomerSimb = { 'A', 'B', 'C', 'E', 'H', 'K', 'M', 'O', 'P', 'T', 'X', 'Y' };
+                if (InputNomer.Length == 6)
+                {
+                    var ValidNumber = true;
+                    for (int i = 0; i < 6 & ValidNumber; i++)
+                    {
+                        if (i == 1 | i == 2 | i == 3)
+                            ValidNumber &= Char.IsDigit(InputNomer[i]);
+                        else
 
-            for (int i = MinValue; i <= MaxValue; i += Shag)
-            {
-
-                Console.Write($"{i}\t");
-            }
-            */
-                */
-
-        Console.Write("Введите число: ");
-            var chislo = Convert.ToDouble(Console.ReadLine());
-            var Factorial1 = 1;
-            for (int i = 2; i <= chislo; i++)
-            {
-                Factorial1 = Factorial1 * i;
-                Console.Write($"{Factorial1}\t");
-            }
-            Console.Write($"\nФакториар равен = {Factorial1}\t");
-            */
-                */
-
-            ar Massiv = new int[10];
-            Random Rand = new Random();
-            for (int i = 0; i < 10; i++)
-            {
-                Massiv[i] = Rand.Next(100);
-                if (Massiv[i] % 2 == 0)
-                    Console.Write("\n{0} - чет", Massiv[i]);
+                            ValidNumber &= (InputNomer[i].ToString().IndexOfAny(GosNomerSimb) >= 0);
+                    }
+                    Console.Write(ValidNumber ? "номер правильный\n" : "номер не правильный\n");
+                }
                 else
-                    Console.Write("\n{0} - нечет", Massiv[i]);
-            }
-            */
-                */
-       
-
-        }
-    } 
+                {
+                    Console.Write("Не правильно\n");
+                    
+                }
+            } 

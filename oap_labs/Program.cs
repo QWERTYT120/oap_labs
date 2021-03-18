@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 // namespace такой же как и название проекта
-namespace oapLabaSmirnov
+namespace oap_labs
 {
 
     /*class Program
@@ -140,8 +140,8 @@ namespace oapLabaSmirnov
 }
         static void ExceptionTest9()
         {
-            string path = @"C:\Users\User\source\repos\Oap_Lab\фигня.docx";
-            string newPath = @"C: \Users\User\source\repos\фигня.docx";
+            string path = @"C:\Users\User\source\repos\Oap_Lab\1.docx";
+            string newPath = @"C: \Users\User\source\repos\1.docx";
             FileInfo fileInf = new FileInfo(path);
             if (fileInf.Exists)
             {
